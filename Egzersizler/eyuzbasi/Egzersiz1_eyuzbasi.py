@@ -4,6 +4,7 @@ bu sınıf üzerinden 2 araba tanımı yapıp sınıf içerisinde yer alacak ola
 bilgiver fonkisyonunu çalıştırarak arabaya ait olan özellikleri ekrana yazdıralım
 """
 
+#####################class çalışması##########################
 class Araba:
     def __init__(self,marka,motor,yil,model):
         self.marka = marka
@@ -22,3 +23,4 @@ araba1 = Araba("TOGG", "200KW",2024,"T10X")
 araba2 = Araba("Alfa Romeo", "200HP",2025, "Stelvio")
 araba1.bilgiver()
 araba2.bilgiver()
+

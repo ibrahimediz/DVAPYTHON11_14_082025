@@ -29,6 +29,6 @@ class araba:
 
 araba1 = araba("Toyota", "1.6", 2020,"suv")
 araba2 = araba("bmw", "1.2", 2034,"suv")
-
 araba1.bilgiver()
 araba2.bilgiver()
+

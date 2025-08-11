@@ -9,6 +9,7 @@ class Araba:
         self.motor = motor
         self.yil = yil
         self.model = model
+
     def bilgiver(self):
         print("#"*30)
         print(self.marka)
@@ -16,4 +17,8 @@ class Araba:
         print(self.yil)
         print(self.model)
         print("#"*30)
-araba1 = Araba("togg", "")
+
+araba1 = Araba("TOGG","200KW",2024,"T10X")
+araba2 = Araba("Alfa Romeo","200HP",2025,"Stelvio")
+araba1.bilgiver()
+araba2.bilgiver()
