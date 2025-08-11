@@ -13,5 +13,5 @@ for item in liste:
     if not os.path.exists(f"./Egzersizler/{item}"):
         os.mkdir(f"./Egzersizler/{item}")
     source = "/workspace/DVAPYTHON11_14_082025/Egzersizler/Egzersiz1.py"
-    destination = f"/workspace/DVAPYTHON11_14_082025/Egzersizler/Egzersiz1_{item}.py"
+    destination = f"/workspace/DVAPYTHON11_14_082025/Egzersizler/{item}/Egzersiz1_{item}.py"
     shutil.copy(source,destination)
