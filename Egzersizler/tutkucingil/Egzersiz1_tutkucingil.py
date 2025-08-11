@@ -4,14 +4,25 @@ bu sınıf üzerinden 2 araba tanımı yapıp sınıf içerisinde yer alacak ola
 bilgiver fonkisyonunu çalıştırarak arabaya ait olan özellikleri ekrana yazdıralım
 """
 
+class Araba:
+    ozellik = "Otomobil"
+    def __init__(self, marka, motor, yil, model):
+        self.marka = marka
+        self.motor = motor
+        self.yil = yil
+        self.model = model
+        
+    def bilgiver(self):
+        print("Arabanın markası: ", self.marka)
+        print("Arabanın motoru: ", self.motor)
+        print("Arabanın üretim yılı: ", self.yil)
+        print("Arabanın modeli: ", self.model)
+        
+    @classmethod
+    def sinifMethod(cls):
+        return cls.ozellik
+    
+arac1= Araba("Renault", 1299, 2024, "Megane")
+arac2 = Araba ("Audi", 2000, 2027, "A6")
 
-import os
-import shutil
-liste=list(filter(lambda x:not x.endswith(".py") ,os.listdir("./Egzersizler")))
-liste.append("cevaplar")
-for item in liste:
-    if not os.path.exists(f"./Egzersizler/{item}"):
-        os.mkdir(f"./Egzersizler/{item}")
-    source = "/workspace/DVAPYTHON11_14_082025/Egzersizler/Egzersiz1.py"
-    destination = f"/workspace/DVAPYTHON11_14_082025/Egzersizler/Egzersiz1_{item}.py"
-    shutil.copy(source,destination)
+arac1.bilgiver()

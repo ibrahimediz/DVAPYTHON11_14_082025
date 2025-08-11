@@ -5,13 +5,20 @@ bilgiver fonkisyonunu çalıştırarak arabaya ait olan özellikleri ekrana yazd
 """
 
 
-import os
-import shutil
-liste=list(filter(lambda x:not x.endswith(".py") ,os.listdir("./Egzersizler")))
-liste.append("cevaplar")
-for item in liste:
-    if not os.path.exists(f"./Egzersizler/{item}"):
-        os.mkdir(f"./Egzersizler/{item}")
-    source = "/workspace/DVAPYTHON11_14_082025/Egzersizler/Egzersiz1.py"
-    destination = f"/workspace/DVAPYTHON11_14_082025/Egzersizler/Egzersiz1_{item}.py"
-    shutil.copy(source,destination)
+class Araba:
+    def __init__(self,marka,motor,yıl,model):
+        self.marka=marka
+        self.motor=motor
+        self.yıl=yıl
+        self.model=model
+    def bilgiver(self):
+        print("*" * 30)
+        print(f"Marka: {self.marka}")
+        print(f"Motor: {self.motor}")
+        print(f"Yıl: {self.yıl}")
+        print(f"Model: {self.model}")
+        print("*" * 30)
+car1 = Araba("TOGG","160kW","2024","T10X")
+car2 = Araba("Toyota", "1.6L Benzinli", 2020, "Corolla")
+car1.bilgiver()
+car2.bilgiver()

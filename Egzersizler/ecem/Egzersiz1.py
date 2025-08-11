@@ -10,15 +10,17 @@ class Araba:
         self.motor = motor
         self.yil = yil
         self.model = model
-    
+
     def bilgiver(self):
         print("#"*30)
-        print("Otomobilin markası: ", self.marka)
-        print("Otomobilin motoru: ", self.motor)
-        print("Otomobilin yili: ", self.yil)
-        print("Otomobilin modeliı: ", self.model)
-        
-araba1 = Araba("TOGG", "200KW",2024,"T10X")
-araba2 = Araba("Alfa Romeo", "200HP",2025, "Stelvio")
-araba1.bilgiver()
-araba2.bilgiver()
+        print(self.marka)
+        print(self.motor)
+        print(self.yil)
+        print(self.model)
+        print("#"*30)
+
+Araba1 = Araba("TOGG","200kW",2024,"T10X")
+Araba2 = Araba("Mercedes","1.6","2024","A180")
+Araba1.bilgiver()
+Araba2.bilgiver()
+
