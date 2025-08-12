@@ -9,7 +9,7 @@ nosqldb = MongoDBTool("mongodb+srv://dvaadmin:12345@appcluster.8lswvog.mongodb.n
                       db="dva1108Egzersiz",col="tracks")
 sorgu = """ SELECT tr.trackid, tr.name, alb.title, art.name FROM artists  as art
 LEFT JOIN albums as alb ON art.artistid = alb.artistid
-LEFT JOIN tracks as tr ON alb.albumid = tr.albumid"""
+LEFT JOIN tracks as tr ON alb.albumid = tr.albumid LIMIT 40"""
 sonuclar = db.sorgu(sorgu)
 
 for item in sonuclar:

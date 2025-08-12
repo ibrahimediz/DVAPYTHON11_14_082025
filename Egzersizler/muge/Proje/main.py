@@ -3,7 +3,7 @@ from dbTool import DBTool
 from nosql import MongoDBTool
 
 
-yol = r"Dokumanlar\Proje\db\chinook.db"
+yol = r"Egzersizler/muge/Proje/db/chinook.db"
 db = DBTool(yol)
 nosqldb = MongoDBTool("mongodb+srv://dvaadmin:12345@appcluster.8lswvog.mongodb.net/?retryWrites=true&w=majority&appName=appCluster",
                       db="dva1108Egzersiz",col="tracks")
