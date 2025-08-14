@@ -12,6 +12,16 @@ def bol(a,b):
         raise ZeroDivisionError()
     return a/b
 
+def faktoriyel(a):
+    fact=1
+    if a==0:
+        raise ValueError()
+    
+    for i in range(1, a+1):
+        fact = fact * i
+    return fact
+    
+
 import unittest
 class TestMathOps(unittest.TestCase):
     def setUp(self):
@@ -24,6 +34,15 @@ class TestMathOps(unittest.TestCase):
         self.assertEqual(topla(3,5),8)
         self.assertEqual(topla(-1,5),4)
         self.assertEqual(topla(3,-5),-2)
+
+    def test_faktoriyel(self):
+        self.assertEqual(faktoriyel(3),6)
+        self.assertEqual(faktoriyel(5),120)
+        self.assertEqual(faktoriyel(1),1)
+
+    def test_sifir_faktoriyel(self):
+        with self.assertRaises(ZeroDivisionError):
+            faktoriyel(0)
 
     def test_bol_sifira(self):
         with self.assertRaises(ZeroDivisionError):

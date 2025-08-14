@@ -7,6 +7,14 @@ def cikar(a,b):
 def carp(a,b):
     return a*b
 
+def faktoriyel(a):
+    sonuc = 1
+    if not a:
+        raise ValueError()
+    for i in range(1,a+1):
+        sonuc *= i
+    return sonuc
+
 def bol(a,b):
     if b == 0:
         raise ZeroDivisionError()
@@ -24,6 +32,22 @@ class TestMathOps(unittest.TestCase):
         self.assertEqual(topla(3,5),8)
         self.assertEqual(topla(-1,5),4)
         self.assertEqual(topla(3,-5),-2)
+
+    def test_cikar(self):
+        self.assertEqual(cikar(3,5),-2)
+
+    def test_carp(self):
+        self.assertEqual(carp(3,5),15)
+
+    def test_faktoriyel(self):
+        self.assertEqual(faktoriyel(5),120)
+
+    def test_bol(self):
+        self.assertEqual(bol(15,3),5.0)
+
+    def test_faktoriyel_sifir(self):
+        with self.assertRaises(ValueError):
+            faktoriyel(0)
 
     def test_bol_sifira(self):
         with self.assertRaises(ZeroDivisionError):

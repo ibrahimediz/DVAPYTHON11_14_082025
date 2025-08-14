@@ -43,4 +43,20 @@ bu hatanının kontrolünü de unit olarak ekleyin
 
 import math
 
-def faktoriyel(n)
+def faktoriyel(n):
+    return math.factorial(n)
+
+class TestFaktoriyel(unittest.TestCase):
+    def test_sifir(self):
+        self.assertEqual(faktoriyel(0),1)
+    def test_bir(self):
+        self.assertEqual(faktoriyel(1),1)
+    def test_pozitif(self):
+        self.assertEqual(faktoriyel(5),120)
+    def test_buyuk_sayi(self):
+        self.assertEqual(faktoriyel(10),3628800)
+    def test_negatif(self):
+        with self.assertRaises(ValueError):
+            faktoriyel(-3)
+if __name__ == "__main__":
+    unittest.main()

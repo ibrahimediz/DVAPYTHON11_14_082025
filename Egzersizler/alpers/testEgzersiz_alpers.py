@@ -55,3 +55,12 @@ class TestMathOps(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+
+"""
+yukarıda yer alan kod bloğu içerisine bir faktoriyel fonksiyonu ekle
+bu fonksiyon ve kalan diğer fonksiyonlara yönelik test unitleri yaz.
+farklı olarak faktoriyel fonksiyonuna 0 parametresi geldiğinde değer hatası verilmesini ve 
+bu hatanının kontrolünü de unit olarak ekle
+"""

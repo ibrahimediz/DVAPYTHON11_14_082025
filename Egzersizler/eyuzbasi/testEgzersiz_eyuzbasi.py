@@ -1,3 +1,5 @@
+from factorial import factorial
+
 def topla(a,b):
     return a+b
 
@@ -12,8 +14,15 @@ def bol(a,b):
         raise ZeroDivisionError()
     return a/b
 
+def faktoriyel(a):
+    sonuc = 1
+    if not a:
+        raise ValueError()
+    for i in range(1,a+1):
+        sonuc *= i
+    return sonuc
+
 import unittest
-import factorial from factorial
 
 class TestMathOps(unittest.TestCase):
     def setUp(self):
@@ -23,13 +32,18 @@ class TestMathOps(unittest.TestCase):
         print("Test Bitti")
 
     def test_topla(self):
-        self.assertEqual(topla(3,5),8)
-        self.assertEqual(topla(-1,5),4)
-        self.assertEqual(topla(3,-5),-2)
+        assert bol(15,3) == 5.0
 
-    def test_bol_sifira(self):
-        with self.assertRaises(ZeroDivisionError):
-            bol(5,0)
+    def test_bol(self):
+        assert bol(15,3) == 5.0
+
+    def test_factorial(self):
+        self.assertEqual(factorial(3),6)
+        self.assertEqual(factorial(6),720)
+
+    def test_sıfırFactorial(self):
+        with self.assertRaises(ValueError):
+          factorial(0)
 
 if __name__ == "__main__":
     unittest.main()

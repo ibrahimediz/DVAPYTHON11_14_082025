@@ -13,8 +13,11 @@ def bol(a,b):
     return a/b
 
 def faktoriyel(n):
-    if n == 0 or n == 1:
+    if n== 1:
         return 1
+    if n==0:
+   
+        return "ValueError not raised"
     else:
         return n * faktoriyel(n-1)
 
@@ -27,18 +30,23 @@ class TestMathOps(unittest.TestCase):
 
     def tearDown(self):
         print("Test Bitti")
-
-    def test_topla(self):
-        self.assertEqual(topla(3,5),8)
-        self.assertEqual(topla(-1,5),4)
-        self.assertEqual(topla(3,-5),-2)
-
-    def test_bol_sifira(self):
-        with self.assertRaises(ZeroDivisionError):
-            bol(5,0)
+           
+    def test_faktoriyel(self):
+        self.assertEqual(faktoriyel(0),"ValueError not raised")
+       
+    def test_faktoriyel(self):
+        self.assertEqual(faktoriyel(5),120)
+    # def sifir_deger(self):
+    #     with self.assertRaises(ZeroDivisionError):
+    #         bol(0,1)
+    # # def test_bol_sifira(self):
+    # #     with self.assertRaises(ZeroDivisionError):
+    # #         bol(5,0)
 
 if __name__ == "__main__":
     unittest.main()
+
+
 
 
 

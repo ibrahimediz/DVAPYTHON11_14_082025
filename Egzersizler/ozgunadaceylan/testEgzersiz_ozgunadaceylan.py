@@ -1,3 +1,4 @@
+import unittest
 def topla(a,b):
     return a+b
 
@@ -11,8 +12,14 @@ def bol(a,b):
     if b == 0:
         raise ZeroDivisionError()
     return a/b
+def faktoriyel (a):
+    if a == 0:
+        raise ValueError("Değer Hatası, 0dan farklı bir sayı girin")
+    sonuc = 1
+    for i in range(1,a+1):
+        sonuc *=i
+    return sonuc
 
-import unittest
 class TestMathOps(unittest.TestCase):
     def setUp(self):
         print("Test Başlıyor")
@@ -25,9 +32,27 @@ class TestMathOps(unittest.TestCase):
         self.assertEqual(topla(-1,5),4)
         self.assertEqual(topla(3,-5),-2)
 
+    def test_carp(self):
+        self.assertEqual(carp(3,5),15)
+
+    def test_bol(self):
+        self.assertEqual(bol(3,5),0.6)
+
+    def test_cikar(self):
+        self.assertEqual(cikar(3,5),-2)    
+
     def test_bol_sifira(self):
         with self.assertRaises(ZeroDivisionError):
             bol(5,0)
+
+    def test_faktoriyel(self):
+        self.assertEqual(faktoriyel(5),120)
+        self.assertEqual(faktoriyel(2),2)
+    
+    def test_sifir_faktoriyel(self):
+        with self.assertRaises(ValueError):
+            faktoriyel(0)
+
 
 if __name__ == "__main__":
     unittest.main()

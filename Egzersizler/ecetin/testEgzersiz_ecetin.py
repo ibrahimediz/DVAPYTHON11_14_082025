@@ -14,9 +14,10 @@ def bol(a, b):
 
 def faktoriyel(n):
     if n == 0:
-        raise ValueError("0 için faktoriyel tanımlı değil")
+        raise ValueError("0 tanımlı değil")
+    
     if n < 0:
-        raise ValueError("Negatif sayıların faktoriyeli alınamaz")
+        raise ValueError("Negatif")
     sonuc = 1
     for i in range(1, n + 1):
         sonuc *= i
@@ -30,39 +31,39 @@ class TestMathOps(unittest.TestCase):
     def tearDown(self):
         print("Test Bitti")
 
-    def test_topla(self):
+    def testTopla(self):
         self.assertEqual(topla(3, 5), 8)
         self.assertEqual(topla(-1, 5), 4)
         self.assertEqual(topla(3, -5), -2)
 
-    def test_cikar(self):
-        self.assertEqual(cikar(10, 5), 5)
+    def testCikar(self):
+        assert cikar(5,3) == 5
         self.assertEqual(cikar(0, 5), -5)
         self.assertEqual(cikar(-3, -2), -1)
 
-    def test_carp(self):
+    def testCarp(self):
         self.assertEqual(carp(4, 5), 20)
         self.assertEqual(carp(-1, 5), -5)
         self.assertEqual(carp(0, 5), 0)
 
-    def test_bol(self):
+    def testBol(self):
         self.assertEqual(bol(10, 2), 5)
         self.assertEqual(bol(-6, 3), -2)
 
-    def test_bol_sifira(self):
+    def testBolSifira(self):
         with self.assertRaises(ZeroDivisionError):
             bol(5, 0)
 
-    def test_faktoriyel(self):
+    def testFaktoriyel(self):
         self.assertEqual(faktoriyel(1), 1)
         self.assertEqual(faktoriyel(5), 120)
         self.assertEqual(faktoriyel(3), 6)
 
-    def test_faktoriyel_sifir(self):
+    def testFaktoriyelSifir(self):
         with self.assertRaises(ValueError):
             faktoriyel(0)
 
-    def test_faktoriyel_negatif(self):
+    def testFaktoriyelNegatif(self):
         with self.assertRaises(ValueError):
             faktoriyel(-4)
 

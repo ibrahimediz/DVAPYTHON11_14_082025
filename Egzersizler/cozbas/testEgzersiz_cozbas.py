@@ -6,7 +6,15 @@ def cikar(a,b):
 
 def carp(a,b):
     return a*b
-
+def faktoriyel(a):
+    sonuc=1
+    if not a: 
+        return ValueError
+    else:
+        if a<2:
+            return 1
+        else:
+            return a*faktoriyel(a-1)
 def bol(a,b):
     if b == 0:
         raise ZeroDivisionError()
@@ -28,12 +36,13 @@ class TestMathOps(unittest.TestCase):
     def test_bol_sifira(self):
         with self.assertRaises(ZeroDivisionError):
             bol(5,0)
-
+    
 if __name__ == "__main__":
+    print(str(faktoriyel()))
     unittest.main()
 
 
-
+    
 """
 yukarıda yer alan kod bloğu içerisine bir faktoriyel fonksiyonu ekleyin
 bu fonksiyon ve kalan diğer fonksiyonlara yönelik test unitleri yazın.
